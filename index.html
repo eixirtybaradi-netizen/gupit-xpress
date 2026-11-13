@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gupit Xpress – Barber Studio | Book Your Cut</title>
+  <meta name="description" content="Gupit Xpress – Your Style, Our Passion. Book your haircut online. Buzzcut, Taper Fade, Two Block & more. Purok 2 Guiling Coliling. Open 9AM–8PM." />
+  <meta name="theme-color" content="#141416" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/cuts/gupit-express-logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/jpeg" href="assets/cuts/gupit-express-logo.jpg" />
+</head>  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== ICON SPRITE (inline SVG, no external dependency) ===== -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c2.4.6 4 2.3 4 5.2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7.1 10.4a16 16 0 0 0 6 6l1.9-1.9a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 2.2 2.5Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+    <symbol id="i-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12A9 9 0 0 1 18.5 5.8M18 2v4h-4M6 22v-4h4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="m3 8 4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#book">Skip to booking</a>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand" id="nav-brand">
+        <img src="assets/cuts/gupit-express-logo-dark.png" alt="Gupit Xpress logo" />
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link" id="nl-home">Home</a></li>
+        <li><a href="#book" class="nav-link" id="nl-book">Book Now</a></li>
+        <li><a href="#services" class="nav-link" id="nl-services">Services</a></li>
+        <li><a href="#barbers" class="nav-link" id="nl-barbers">Barbers</a></li>
+        <li><a href="#gallery" class="nav-link" id="nl-gallery">Gallery</a></li>
+        <li><a href="#reviews" class="nav-link" id="nl-reviews">Reviews</a></li>
+        <li><a href="#contact" class="nav-link" id="nl-contact">Contact</a></li>
+      </ul>
+      <a href="#book" class="nav-cta" id="nav-book-btn">Book Now</a>
+      <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="dot-red"></span>
+          <span>Purok 2 Guiling Coliling &nbsp;·&nbsp; Open 9AM – 8PM</span>
+        </div>
+        <h1 class="hero-title">
+          YOUR STYLE,<br/>
+          <span class="hero-title-red">OUR PASSION.</span>
+        </h1>
+        <p class="hero-subtitle">Premium haircuts by skilled barbers. Walk in or book online — we've got your cut covered.</p>
+        <div class="hero-actions">
+          <a href="#book" class="btn-red" id="hero-book-btn">Book Appointment <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+          <a href="#services" class="btn-ghost" id="hero-services-btn">See Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-n">7</span>
+            <span class="stat-l">Haircut Styles</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-n">₱120</span>
+            <span class="stat-l">Every Haircut</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-n">11h</span>
+            <span class="stat-l">Open Daily</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-mosaic">
+          <img src="assets/cuts/taper-fade.jpg" alt="" class="m1" />
+          <img src="assets/cuts/two-block.jpg" alt="" class="m2" />
+          <img src="assets/cuts/modern-mullet.jpg" alt="" class="m3" />
+          <img src="assets/cuts/drop-fade.jpg" alt="" class="m4" />
+        </div>
+        <div class="hero-badge"><svg class="ic"><use href="#i-scissors"/></svg><div><strong>Barber Studio</strong><span>Skilled hands · Clean cuts</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING SECTION ===== -->
+  <section id="book" class="booking-section">
+    <div class="booking-wrap">
+      <div class="booking-header">
+        <div class="section-eyebrow">Book an Appointment</div>
+        <h2 class="section-title">Reserve your <span class="red">slot</span></h2>
+        <p class="section-sub">Pick your barber, choose your cut, and select a time. Easy.</p>
+      </div>
+
+      <div class="booking-card" id="booking-card">
+        <!-- STEP INDICATOR -->
+        <div class="steps-bar" aria-label="Booking progress">
+          <div class="step active" id="step-ind-1">
+            <div class="step-circle">1</div>
+            <span>Service</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-2">
+            <div class="step-circle">2</div>
+            <span>Barber</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-3">
+            <div class="step-circle">3</div>
+            <span>Date &amp; Time</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-4">
+            <div class="step-circle">4</div>
+            <span>Confirm</span>
+          </div>
+        </div>
+
+        <!-- STEP 1: SELECT SERVICE -->
+        <div class="booking-step" id="booking-step-1">
+          <h3 class="step-title">Choose Your Haircut</h3>
+          <div class="service-grid" id="service-grid">
+            <div class="service-opt" data-service="Buzzcut" id="svc-buzzcut">
+              <div class="svc-icon"><svg class="ic"><use href="#i-scissors"/></svg></div>
+              <div class="svc-name">Buzzcut</div>
+              <div class="svc-tag">Classic</div>
+            </div>
+            <div class="service-opt" data-service="Taper Fade" id="svc-taper">
+              <div class="svc-icon"><svg class="ic"><use href="#i-scissors"/></svg></div>
+              <div class="svc-name">Taper Fade</div>
+              <div class="svc-tag">Popular</div>
+            </div>
+            <div class="service-opt" data-service="Drop Fade" id="svc-drop">
+              <div class="svc-icon"><svg class="ic"><use href="#i-scissors"/></svg></div>
+              <div class="svc-name">Drop Fade</div>
+              <div class="svc-tag">Trending</div>
+            </div>
+            <div class="service-opt" data-service="Two Block" id="svc-twoblock">
+              <div class="svc-icon"><svg class="ic"><use href="#i-scissors"/></svg></div>
+              <div class="svc-name">Two Block</div>
+              <div class="svc-tag">K-Style</div>
+            </div>
+            <div class="service-opt" data-service="Modern Mullet" id="svc-mullet">
+              <div class="svc-icon"><svg class="ic"><use href="#i-scissors"/></svg></div>
+              <div class="svc-name">Modern Mullet</div>
+              <div class="svc-tag">Retro</div>
+            </div>
+            <div class="service-opt" data-service="Moodcut" id="svc-mood">
+              <div class="svc-icon"><svg class="ic"><use href="#i-scissors"/></svg></div>
+              <div class="svc-name">Moodcut</div>
+              <div class="svc-tag">Creative</div>
+            </div>
+         
+          </div>
+          <div class="step-nav">
+            <button class="btn-red step-next" id="step1-next" onclick="goStep(2)">Next: Choose Barber <svg class="ic"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </div>
+
+        <!-- STEP 2: SELECT BARBER -->
+        <div class="booking-step hidden" id="booking-step-2">
+          <h3 class="step-title">Choose Your Barber</h3>
+          <div class="barber-pick-grid" id="barber-pick-grid">
+            <div class="barber-opt" data-barber="Any Barber" id="bpick-any">
+              <div class="barber-opt-avatar any"><svg class="ic"><use href="#i-users"/></svg></div>
+              <div class="barber-opt-name">Any Available</div>
+              <div class="barber-opt-role">First free barber</div>
+            </div>
+            <div class="barber-opt" data-barber="Mark Philip Delfin" id="bpick-mark">
+              <div class="barber-opt-avatar" id="bpick-avatar-mark">M</div>
+              <div class="barber-opt-name">Mark Delfin</div>
+              <div class="barber-opt-role">Owner · Manager</div>
+            </div>
+            <div class="barber-opt" data-barber="Kenneth Castillo" id="bpick-kenneth">
+              <div class="barber-opt-avatar" id="bpick-avatar-kenneth">K</div>
+              <div class="barber-opt-name">Kenneth Castillo</div>
+              <div class="barber-opt-role">Barber</div>
+            </div>
+            <div class="barber-opt" data-barber="Carl Jian Adap" id="bpick-carl">
+              <div class="barber-opt-avatar" id="bpick-avatar-carl">C</div>
+              <div class="barber-opt-name">Carl Jian Adap</div>
+              <div class="barber-opt-role">Barber</div>
+            </div>
+            <div class="barber-opt" data-barber="Rk Ferrer" id="bpick-rk">
+              <div class="barber-opt-avatar" id="bpick-avatar-rk">R</div>
+              <div class="barber-opt-name">Rk Ferrer</div>
+              <div class="barber-opt-role">Barber</div>
+            </div>
+            <div class="barber-opt" data-barber="Rene Sanchez Moreno" id="bpick-rene">
+              <div class="barber-opt-avatar" id="bpick-avatar-rene">R</div>
+              <div class="barber-opt-name">Rene Moreno</div>
+              <div class="barber-opt-role">Barber</div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline-dark" onclick="goStep(1)"><svg class="ic"><use href="#i-arrow-left"/></svg> Back</button>
+            <button class="btn-red step-next" id="step2-next" onclick="goStep(3)">Next: Pick Date &amp; Time <svg class="ic"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </div>
+
+        <!-- STEP 3: DATE & TIME -->
+        <div class="booking-step hidden" id="booking-step-3">
+          <h3 class="step-title">Select Date &amp; Time</h3>
+          <div class="datetime-layout">
+            <div class="date-col">
+              <label class="field-label" for="booking-date">Date</label>
+              <input type="date" id="booking-date" class="date-input" />
+              <div class="time-label-row">
+                <label class="field-label">Available Slots</label>
+                <span class="slot-legend"><i class="lg-free"></i>Open <i class="lg-taken"></i>Booked</span>
+              </div>
+              <div class="time-slots" id="time-slots">
+                <button class="time-slot" data-time="9:00 AM">9:00 AM</button>
+                <button class="time-slot" data-time="9:30 AM">9:30 AM</button>
+                <button class="time-slot" data-time="10:00 AM">10:00 AM</button>
+                <button class="time-slot" data-time="10:30 AM">10:30 AM</button>
+                <button class="time-slot" data-time="11:00 AM">11:00 AM</button>
+                <button class="time-slot" data-time="11:30 AM">11:30 AM</button>
+                <button class="time-slot" data-time="12:00 PM">12:00 PM</button>
+                <button class="time-slot" data-time="12:30 PM">12:30 PM</button>
+                <button class="time-slot" data-time="1:00 PM">1:00 PM</button>
+                <button class="time-slot" data-time="1:30 PM">1:30 PM</button>
+                <button class="time-slot" data-time="2:00 PM">2:00 PM</button>
+                <button class="time-slot" data-time="2:30 PM">2:30 PM</button>
+                <button class="time-slot" data-time="3:00 PM">3:00 PM</button>
+                <button class="time-slot" data-time="3:30 PM">3:30 PM</button>
+                <button class="time-slot" data-time="4:00 PM">4:00 PM</button>
+                <button class="time-slot" data-time="4:30 PM">4:30 PM</button>
+                <button class="time-slot" data-time="5:00 PM">5:00 PM</button>
+                <button class="time-slot" data-time="5:30 PM">5:30 PM</button>
+                <button class="time-slot" data-time="6:00 PM">6:00 PM</button>
+                <button class="time-slot" data-time="6:30 PM">6:30 PM</button>
+                <button class="time-slot" data-time="7:00 PM">7:00 PM</button>
+                <button class="time-slot" data-time="7:30 PM">7:30 PM</button>
+              </div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline-dark" onclick="goStep(2)"><svg class="ic"><use href="#i-arrow-left"/></svg> Back</button>
+            <button class="btn-red step-next" id="step3-next" onclick="goStep(4)">Next: Confirm <svg class="ic"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </div>
+
+        <!-- STEP 4: CONFIRM -->
+        <div class="booking-step hidden" id="booking-step-4">
+          <h3 class="step-title">Confirm Your Booking</h3>
+          <div class="confirm-card" id="confirm-card">
+            <div class="confirm-row"><span><svg class="ic"><use href="#i-scissors"/></svg> Service</span><strong id="conf-service">—</strong></div>
+            <div class="confirm-row"><span><svg class="ic"><use href="#i-cash"/></svg> Haircut price</span><strong id="conf-price">₱120</strong></div>
+            <div class="confirm-row"><span><svg class="ic"><use href="#i-user"/></svg> Barber</span><strong id="conf-barber">—</strong></div>
+            <div class="confirm-row"><span><svg class="ic"><use href="#i-calendar"/></svg> Date</span><strong id="conf-date">—</strong></div>
+            <div class="confirm-row"><span><svg class="ic"><use href="#i-clock"/></svg> Time</span><strong id="conf-time">—</strong></div>
+            <div class="confirm-divider"></div>
+            <div class="confirm-row"><span><svg class="ic"><use href="#i-receipt"/></svg> Payment</span>
+              <div class="pay-toggles">
+                <button class="pay-toggle active" data-pay="Cash" id="pay-cash-btn" type="button"><svg class="ic"><use href="#i-cash"/></svg> Cash</button>
+                <button class="pay-toggle" data-pay="GCash" id="pay-gcash-btn" type="button"><svg class="ic"><use href="#i-mobile"/></svg> GCash</button>
+              </div>
+            </div>
+            <div class="receipt-upload hidden" id="receipt-upload-wrap">
+              <label for="customer-receipt">GCash payment receipt *</label>
+              <input type="file" id="customer-receipt" accept="image/*" />
+              <span id="receipt-file-name">Upload a screenshot or photo of your payment receipt.</span>
+              <img id="customer-receipt-preview" class="hidden" alt="Receipt preview" />
+            </div>
+          </div>
+          <div class="your-details">
+            <h4 class="details-head">Your Details</h4>
+            <div class="details-grid">
+              <div class="form-group">
+                <label for="cust-name">Full Name *</label>
+                <input type="text" id="cust-name" placeholder="Juan dela Cruz" required />
+              </div>
+              <div class="form-group">
+                <label for="cust-phone">Phone Number *</label>
+                <input type="tel" id="cust-phone" placeholder="09XX XXX XXXX" required />
+              </div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline-dark" onclick="goStep(3)"><svg class="ic"><use href="#i-arrow-left"/></svg> Back</button>
+            <button class="btn-red" id="confirm-book-btn"><svg class="ic"><use href="#i-check"/></svg> Confirm Booking</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOOKING SUCCESS -->
+      <div class="booking-success hidden" id="booking-success">
+        <div class="success-icon"><svg class="ic"><use href="#i-check"/></svg></div>
+        <h3>Booking Confirmed!</h3>
+        <p id="success-msg">Your slot has been reserved. See you at Gupit Xpress!</p>
+        <div class="success-detail" id="success-detail"></div>
+        <button class="btn-red" onclick="resetBooking()" id="book-another-btn">Book Another Slot</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GCASH MODAL ===== -->
+  <div class="modal-overlay hidden" id="gcash-modal">
+    <div class="modal-box" id="gcash-box">
+      <button class="modal-x" onclick="closeGcash()" id="gcash-close" aria-label="Close payment details"><svg class="ic"><use href="#i-x"/></svg></button>
+      <div class="gcash-header">
+        <div>
+          <h3>Pay via GCash</h3>
+          <p>Scan QR or send to the number below</p>
+        </div>
+      </div>
+      <div class="qr-zone" id="qr-zone">
+        <div class="qr-placeholder-box" id="qr-placeholder">
+          <div class="qr-corner-mark tl"></div>
+          <div class="qr-corner-mark tr"></div>
+          <div class="qr-corner-mark bl"></div>
+          <div class="qr-corner-mark br"></div>
+          <div class="qr-label">
+            <svg class="ic"><use href="#i-mobile"/></svg>
+            <p>GCash QR Code</p>
+            <p class="qr-sub">Upload QR below</p>
+          </div>
+        </div>
+        <img id="gcash-qr-img" src="" alt="GCash QR" class="gcash-qr-real hidden" />
+      </div>
+      <div class="gcash-account">
+        <div class="gcash-info-row"><span>Name</span><strong>Mark Philip Delfin</strong></div>
+        <div class="gcash-info-row"><span>Number</span><strong>09773747891</strong></div>
+      </div>
+      <label for="gcash-qr-upload" class="btn-outline-dark admin-only-upload" id="gcash-upload-qr-btn">
+        <svg class="ic"><use href="#i-upload"/></svg> Upload GCash QR Code
+        <input type="file" id="gcash-qr-upload" accept="image/*" class="upload-input" />
+      </label>
+      <p class="gcash-note">Show transaction receipt to your barber upon arrival.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="receipt-preview-modal" aria-modal="true" role="dialog" aria-label="Customer payment receipt">
+    <div class="receipt-preview-box">
+      <button class="modal-x" type="button" id="receipt-preview-close" aria-label="Close receipt"><svg class="ic"><use href="#i-x"/></svg></button>
+      <h2>Customer payment receipt</h2>
+      <img id="admin-receipt-image" alt="Customer payment receipt" />
+    </div>
+  </div>
+
+  <!-- ===== SERVICES / HAIRCUTS ===== -->
+  <section id="services" class="section services-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-title">Haircut <span class="red">styles</span></h2>
+      <p class="section-sub">Pick any style. Every haircut is ₱120.</p>
+
+      <div class="cuts-grid">
+
+        <div class="cut-card" id="cc-buzzcut">
+          <div class="cut-photo-area">
+            <div class="cut-no-photo" id="no-photo-buzzcut">
+              <span class="cut-big-icon"><svg class="ic"><use href="#i-scissors"/></svg></span>
+              <label for="cup-buzzcut" class="add-photo-btn">+ Add Photo</label>
+              <input type="file" id="cup-buzzcut" accept="image/*" class="upload-input cut-upload" data-card="cc-buzzcut" data-id="buzzcut" />
+            </div>
+          </div>
+          <div class="cut-card-body">
+            <div class="cut-card-top">
+              <h3>Buzzcut</h3>
+              <span class="cut-pill">Classic</span>
+            </div>
+            <p class="cut-desc">Short, uniform length all over. Low maintenance and always sharp.</p>
+          </div>
+        </div>
+
+        <div class="cut-card" id="cc-taper">
+          <div class="cut-photo-area">
+            <div class="cut-no-photo" id="no-photo-taper">
+              <span class="cut-big-icon"><svg class="ic"><use href="#i-scissors"/></svg></span>
+              <label for="cup-taper" class="add-photo-btn">+ Add Photo</label>
+              <input type="file" id="cup-taper" accept="image/*" class="upload-input cut-upload" data-card="cc-taper" data-id="taper" />
+            </div>
+          </div>
+          <div class="cut-card-body">
+            <div class="cut-card-top">
+              <h3>Taper Fade</h3>
+              <span class="cut-pill popular">Popular</span>
+            </div>
+            <p class="cut-desc">Smooth blend from skin to longer hair on top. Clean and timeless.</p>
+          </div>
+        </div>
+
+        <div class="cut-card" id="cc-drop">
+          <div class="cut-photo-area">
+            <div class="cut-no-photo" id="no-photo-drop">
+              <span class="cut-big-icon"><svg class="ic"><use href="#i-scissors"/></svg></span>
+              <label for="cup-drop" class="add-photo-btn">+ Add Photo</label>
+              <input type="file" id="cup-drop" accept="image/*" class="upload-input cut-upload" data-card="cc-drop" data-id="drop" />
+            </div>
+          </div>
+          <div class="cut-card-body">
+            <div class="cut-card-top">
+              <h3>Drop Fade</h3>
+              <span class="cut-pill trending">Trending</span>
+            </div>
+            <p class="cut-desc">Fade that curves behind the ear for a stylish, modern shape.</p>
+          </div>
+        </div>
+
+        <div class="cut-card" id="cc-twoblock">
+          <div class="cut-photo-area">
+            <div class="cut-no-photo" id="no-photo-twoblock">
+              <span class="cut-big-icon"><svg class="ic"><use href="#i-scissors"/></svg></span>
+              <label for="cup-twoblock" class="add-photo-btn">+ Add Photo</label>
+              <input type="file" id="cup-twoblock" accept="image/*" class="upload-input cut-upload" data-card="cc-twoblock" data-id="twoblock" />
+            </div>
+          </div>
+          <div class="cut-card-body">
+            <div class="cut-card-top">
+              <h3>Two Block</h3>
+              <span class="cut-pill">K-Style</span>
+            </div>
+            <p class="cut-desc">Korean-style: shaved sides with textured longer top. Ultra clean.</p>
+          </div>
+        </div>
+
+        <div class="cut-card" id="cc-mullet">
+          <div class="cut-photo-area">
+            <div class="cut-no-photo" id="no-photo-mullet">
+              <span class="cut-big-icon"><svg class="ic"><use href="#i-scissors"/></svg></span>
+              <label for="cup-mullet" class="add-photo-btn">+ Add Photo</label>
+              <input type="file" id="cup-mullet" accept="image/*" class="upload-input cut-upload" data-card="cc-mullet" data-id="mullet" />
+            </div>
+          </div>
+          <div class="cut-card-body">
+            <div class="cut-card-top">
+              <h3>Modern Mullet</h3>
+              <span class="cut-pill">Retro</span>
+            </div>
+            <p class="cut-desc">Business up front, party at the back. The modern classic is back.</p>
+          </div>
+        </div>
+
+        <div class="cut-card" id="cc-mood">
+          <div class="cut-photo-area">
+            <div class="cut-no-photo" id="no-photo-mood">
+              <span class="cut-big-icon"><svg class="ic"><use href="#i-scissors"/></svg></span>
+              <label for="cup-mood" class="add-photo-btn">+ Add Photo</label>
+              <input type="file" id="cup-mood" accept="image/*" class="upload-input cut-upload" data-card="cc-mood" data-id="mood" />
+            </div>
+          </div>
+          <div class="cut-card-body">
+            <div class="cut-card-top">
+              <h3>Moodcut</h3>
+              <span class="cut-pill">Creative</span>
+            </div>
+            <p class="cut-desc">Expressive and unique — crafted to match your personality and vibe.</p>
+          </div>
+        </div>
+
+  
+
+      </div>
+    </div>
+  </section>
+
+    <!-- ===== BARBERS ===== -->
+  <section id="barbers" class="section barbers-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">The Crew</div>
+      <h2 class="section-title">Meet the <span class="red">barbers</span></h2>
+      <p class="section-sub">Skilled hands, sharp blades, clean cuts — every time</p>
+
+      <div class="barbers-row">
+
+        <!-- MARK -->
+        <div class="barber-card owner-card" id="bc-mark">
+          <div class="barber-img-area">
+            <div class="barber-initials" id="bi-mark">M</div>
+            <img src="" alt="Mark Philip Delfin" class="barber-real-img hidden" id="bimg-mark" />
+            <span class="owner-crown" title="Owner"><svg class="ic"><use href="#i-crown"/></svg></span>
+          </div>
+          <div class="barber-body">
+            <div class="barber-badge owner-badge">Owner / Manager</div>
+            <h3 class="barber-nm">Mark Philip Delfin</h3>
+            <p class="barber-age">Age 25</p>
+            <div class="barber-contacts">
+              <a href="mailto:Dlfnmrk@gmail.com" class="bcontact" id="mark-email">Dlfnmrk@gmail.com</a>
+              <a href="tel:09773747891" class="bcontact" id="mark-phone">09773747891</a>
+            </div>
+            <div class="admin-photo-controls">
+              <label for="bup-mark" class="photo-up-btn" id="bup-mark-lbl"><svg class="ic"><use href="#i-camera"/></svg> Upload Photo <input type="file" id="bup-mark" accept="image/*" class="upload-input barber-up" data-bid="mark" /></label>
+              <button type="button" class="remove-photo-btn" data-bid="mark"><svg class="ic"><use href="#i-trash"/></svg> Remove Photo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KENNETH -->
+        <div class="barber-card" id="bc-kenneth">
+          <div class="barber-img-area">
+            <div class="barber-initials" id="bi-kenneth">K</div>
+            <img src="" alt="Kenneth Castillo" class="barber-real-img hidden" id="bimg-kenneth" />
+          </div>
+          <div class="barber-body">
+            <div class="barber-badge">Barber</div>
+            <h3 class="barber-nm">Kenneth Castillo</h3>
+            <p class="barber-age">Age 27</p>
+            <div class="barber-contacts">
+              <a href="mailto:castillo5650995@gmail.com" class="bcontact" id="kenneth-email">castillo5650995@gmail.com</a>
+              <a href="tel:09279634855" class="bcontact" id="kenneth-phone">09279634855</a>
+            </div>
+            <div class="admin-photo-controls">
+              <label for="bup-kenneth" class="photo-up-btn" id="bup-kenneth-lbl"><svg class="ic"><use href="#i-camera"/></svg> Upload Photo <input type="file" id="bup-kenneth" accept="image/*" class="upload-input barber-up" data-bid="kenneth" /></label>
+              <button type="button" class="remove-photo-btn" data-bid="kenneth"><svg class="ic"><use href="#i-trash"/></svg> Remove Photo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARL -->
+        <div class="barber-card" id="bc-carl">
+          <div class="barber-img-area">
+            <div class="barber-initials" id="bi-carl">C</div>
+            <img src="" alt="Carl Jian Adap" class="barber-real-img hidden" id="bimg-carl" />
+          </div>
+          <div class="barber-body">
+            <div class="barber-badge">Barber</div>
+            <h3 class="barber-nm">Carl Jian Adap</h3>
+            <p class="barber-age">Age 20</p>
+            <div class="barber-contacts">
+              <a href="mailto:cadap69@gmail.com" class="bcontact" id="carl-email">cadap69@gmail.com</a>
+              <a href="tel:09277935975" class="bcontact" id="carl-phone">09277935975</a>
+            </div>
+            <div class="admin-photo-controls">
+              <label for="bup-carl" class="photo-up-btn" id="bup-carl-lbl"><svg class="ic"><use href="#i-camera"/></svg> Upload Photo <input type="file" id="bup-carl" accept="image/*" class="upload-input barber-up" data-bid="carl" /></label>
+              <button type="button" class="remove-photo-btn" data-bid="carl"><svg class="ic"><use href="#i-trash"/></svg> Remove Photo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RK -->
+        <div class="barber-card" id="bc-rk">
+          <div class="barber-img-area">
+            <div class="barber-initials" id="bi-rk">R</div>
+            <img src="" alt="Rk Ferrer" class="barber-real-img hidden" id="bimg-rk" />
+          </div>
+          <div class="barber-body">
+            <div class="barber-badge">Barber</div>
+            <h3 class="barber-nm">Rk Ferrer</h3>
+            <p class="barber-age">&nbsp;</p>
+            <div class="barber-contacts"><span class="bcontact-na">N/A</span></div>
+            <div class="admin-photo-controls">
+              <label for="bup-rk" class="photo-up-btn" id="bup-rk-lbl"><svg class="ic"><use href="#i-camera"/></svg> Upload Photo <input type="file" id="bup-rk" accept="image/*" class="upload-input barber-up" data-bid="rk" /></label>
+              <button type="button" class="remove-photo-btn" data-bid="rk"><svg class="ic"><use href="#i-trash"/></svg> Remove Photo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RENE -->
+        <div class="barber-card" id="bc-rene">
+          <div class="barber-img-area">
+            <div class="barber-initials" id="bi-rene">R</div>
+            <img src="" alt="Rene Sanchez Moreno" class="barber-real-img hidden" id="bimg-rene" />
+          </div>
+          <div class="barber-body">
+            <div class="barber-badge">Barber</div>
+            <h3 class="barber-nm">Rene Sanchez Moreno</h3>
+            <p class="barber-age">Age 24</p>
+            <div class="barber-contacts">
+              <a href="mailto:Jrleanomoreno45@gmail.com" class="bcontact" id="rene-email">Jrleanomoreno45@gmail.com</a>
+              <a href="tel:09452243762" class="bcontact" id="rene-phone">09452243762</a>
+            </div>
+            <div class="admin-photo-controls">
+              <label for="bup-rene" class="photo-up-btn" id="bup-rene-lbl"><svg class="ic"><use href="#i-camera"/></svg> Upload Photo <input type="file" id="bup-rene" accept="image/*" class="upload-input barber-up" data-bid="rene" /></label>
+              <button type="button" class="remove-photo-btn" data-bid="rene"><svg class="ic"><use href="#i-trash"/></svg> Remove Photo</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="section gallery-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Fresh Cuts</div>
+      <h2 class="section-title">Photo &amp; video <span class="red">gallery</span></h2>
+      <p class="section-sub">Fresh work from the Gupit Xpress barbers.</p>
+
+      <div class="gallery-upload-box" id="gallery-drop">
+        <div class="gallery-upload-icon"><svg class="ic"><use href="#i-upload"/></svg></div>
+        <p class="gallery-upload-text">Choose a photo or video and add an Instagram-ready caption.</p>
+        <div class="gallery-upload-controls">
+          <label for="gallery-input" class="btn-outline-dark gallery-choose-btn" id="gallery-upload-lbl">
+            Choose Photo or Video
+            <input type="file" id="gallery-input" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm,video/quicktime" class="upload-input" />
+          </label>
+          <span id="gallery-file-name" class="gallery-file-name">No media selected</span>
+        </div>
+        <label class="gallery-caption-label" for="gallery-caption">Caption</label>
+        <textarea id="gallery-caption" maxlength="2200" rows="3" placeholder="Write a caption for this post..."></textarea>
+        <button class="btn-red" id="gallery-post-btn" type="button">Post to Gallery</button>
+      </div>
+
+      <div class="gallery-content" id="gallery-content">
+        <section class="gallery-stream-section" aria-labelledby="gallery-photos-title">
+          <div class="gallery-stream-heading">
+            <h3 id="gallery-photos-title">Photos</h3>
+            <span>Fresh cuts from the shop</span>
+          </div>
+          <div class="gallery-masonry" id="gallery-photos-grid">
+            <div class="gallery-empty" id="gallery-photos-empty">No photos posted yet.</div>
+          </div>
+        </section>
+        <section class="gallery-stream-section gallery-video-section" aria-labelledby="gallery-videos-title">
+          <div class="gallery-stream-heading">
+            <div>
+              <h3 id="gallery-videos-title">Videos</h3>
+              <span>Watch the latest cuts</span>
+            </div>
+          </div>
+          <div class="gallery-video-carousel" id="gallery-video-carousel">
+            <button class="gallery-carousel-arrow gallery-carousel-prev" id="gallery-video-prev" type="button" aria-label="Previous video" disabled><svg class="ic"><use href="#i-chev-left"/></svg></button>
+            <div class="gallery-video-viewport" id="gallery-videos-viewport">
+              <div class="gallery-video-feed" id="gallery-videos-feed">
+                <div class="gallery-empty" id="gallery-videos-empty">No videos posted yet.</div>
+              </div>
+            </div>
+            <button class="gallery-carousel-arrow gallery-carousel-next" id="gallery-video-next" type="button" aria-label="Next video" disabled><svg class="ic"><use href="#i-chev-right"/></svg></button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews" class="section reviews-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">What Clients Say</div>
+      <h2 class="section-title">Customer <span class="red">reviews</span></h2>
+
+      <div class="reviews-layout">
+        <div class="review-form-box">
+          <h3>Leave a Review</h3>
+          <form id="review-form" class="review-form">
+            <div class="rform-row">
+              <div class="rform-group">
+                <label for="rv-name">Your name (optional)</label>
+                <input type="text" id="rv-name" placeholder="Leave blank to post anonymously" />
+              </div>
+              <div class="rform-group">
+                <label for="rv-barber">Barber</label>
+                <select id="rv-barber">
+                  <option value="">Any barber</option>
+                  <option>Mark Philip Delfin</option>
+                  <option>Kenneth Castillo</option>
+                  <option>Carl Jian Adap</option>
+                  <option>Rk Ferrer</option>
+                  <option>Rene Sanchez Moreno</option>
+                </select>
+              </div>
+            </div>
+            <div class="rform-group">
+              <label for="rv-cut">Haircut</label>
+              <select id="rv-cut">
+                <option value="">Select haircut</option>
+                <option>Buzzcut</option><option>Taper Fade</option><option>Drop Fade</option>
+                <option>Two Block</option><option>Modern Mullet</option><option>Moodcut</option>
+                <option>Barbers Cut</option>
+              </select>
+            </div>
+            <div class="rform-group">
+              <label>Rating *</label>
+              <div class="star-row" id="star-row">
+                <button type="button" class="star-btn" data-v="1" id="s1" aria-label="1 star">★</button>
+                <button type="button" class="star-btn" data-v="2" id="s2" aria-label="2 stars">★</button>
+                <button type="button" class="star-btn" data-v="3" id="s3" aria-label="3 stars">★</button>
+                <button type="button" class="star-btn" data-v="4" id="s4" aria-label="4 stars">★</button>
+                <button type="button" class="star-btn" data-v="5" id="s5" aria-label="5 stars">★</button>
+              </div>
+              <input type="hidden" id="rv-rating" value="0" />
+            </div>
+            <div class="rform-group">
+              <label for="rv-msg">Review *</label>
+              <textarea id="rv-msg" rows="4" placeholder="How was your experience?" required></textarea>
+            </div>
+            <button type="submit" class="btn-red full-w" id="rv-submit-btn">Post Review</button>
+          </form>
+        </div>
+
+        <div class="reviews-feed" id="reviews-feed">
+          <div class="rv-card" id="rv-sample-1">
+            <div class="rv-top">
+              <div class="rv-av">J</div>
+              <div class="rv-meta">
+                <div class="rv-name">Jose Reyes</div>
+                <div class="rv-info">Taper Fade · Mark Philip Delfin</div>
+              </div>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <p class="rv-text">"Sobrang ganda ng taper fade ko! Talagang maalam si Kuya Mark. Babalik ako next week!"</p>
+            <div class="rv-date">Oct 13, 2026</div>
+          </div>
+          <div class="rv-card" id="rv-sample-2">
+            <div class="rv-top">
+              <div class="rv-av">R</div>
+              <div class="rv-meta">
+                <div class="rv-name">Rhed Santos</div>
+                <div class="rv-info">Two Block · Kenneth Castillo</div>
+              </div>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <p class="rv-text">"Ang galing ni Kenneth! Perpekto ang two block. Sulit na sulit!"</p>
+            <div class="rv-date">Oct 12, 2026</div>
+          </div>
+          <div class="rv-card" id="rv-sample-3">
+            <div class="rv-top">
+              <div class="rv-av">A</div>
+              <div class="rv-meta">
+                <div class="rv-name">Angelo Cruz</div>
+                <div class="rv-info">Drop Fade · Carl Jian Adap</div>
+              </div>
+              <div class="rv-stars">★★★★☆</div>
+            </div>
+            <p class="rv-text">"Si Carl is underrated! Drop fade ko — chef's kiss. Gupit Xpress is legit!"</p>
+            <div class="rv-date">Oct 10, 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Find Us</div>
+      <h2 class="section-title">Contact &amp; <span class="red">info</span></h2>
+      <div class="contact-cards">
+        <div class="contact-tile" id="ct-address">
+          <div class="ctile-icon"><svg class="ic"><use href="#i-pin"/></svg></div>
+          <h4>Address</h4>
+          <p>Purok 2 Guiling Coliling</p>
+        </div>
+        <div class="contact-tile" id="ct-hours">
+          <div class="ctile-icon"><svg class="ic"><use href="#i-clock"/></svg></div>
+          <h4>Hours</h4>
+          <p>9:00 AM – 8:00 PM<br/><small>Open Daily</small></p>
+        </div>
+        <div class="contact-tile" id="ct-phone">
+          <div class="ctile-icon"><svg class="ic"><use href="#i-phone"/></svg></div>
+          <h4>Phone</h4>
+          <p><a href="tel:09773747891">09773747891</a></p>
+        </div>
+        <div class="contact-tile" id="ct-email">
+          <div class="ctile-icon"><svg class="ic"><use href="#i-mail"/></svg></div>
+          <h4>Email</h4>
+          <p><a href="mailto:Dlfnmrk@gmail.com">Dlfnmrk@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/cuts/gupit-express-logo-dark.png" alt="Gupit Xpress logo" class="footer-logo-image" />
+        <p>Your Style, Our Passion.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a><a href="#book">Book</a><a href="#services">Services</a>
+        <a href="#barbers">Barbers</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a>
+        <a href="#admin-panel" id="admin-open-link">Staff Login</a>
+      </div>
+      <p class="footer-copy">© 2026 Gupit Xpress · Purok 2 Guiling Coliling · All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- ===== STAFF DASHBOARD (shown after admin sign-in) ===== -->
+  <div class="admin-app hidden" id="admin-panel" aria-label="Staff dashboard">
+    <aside class="adm-side" id="adm-side">
+      <div class="adm-brand">
+        <img src="assets/cuts/gupit-express-logo-dark.png" alt="Gupit Xpress" />
+        <span>Staff Console</span>
+      </div>
+      <nav class="adm-nav" aria-label="Dashboard navigation">
+        <p class="adm-nav-label">Operations</p>
+        <button type="button" class="adm-link active" data-adm-target="adm-overview"><svg class="ic"><use href="#i-dashboard"/></svg> Overview</button>
+        <button type="button" class="adm-link" data-adm-target="adm-queue"><svg class="ic"><use href="#i-list"/></svg> Customer Queue <span class="adm-count" id="adm-count-waiting">0</span></button>
+        <button type="button" class="adm-link" data-adm-target="adm-records"><svg class="ic"><use href="#i-receipt"/></svg> Customer Records</button>
+        <p class="adm-nav-label">Site content</p>
+        <button type="button" class="adm-link" data-site-target="gallery"><svg class="ic"><use href="#i-image"/></svg> Gallery posts</button>
+        <button type="button" class="adm-link" data-site-target="services"><svg class="ic"><use href="#i-scissors"/></svg> Haircut photos</button>
+        <button type="button" class="adm-link" data-site-target="barbers"><svg class="ic"><use href="#i-users"/></svg> Barber photos</button>
+        <button type="button" class="adm-link" id="adm-gcash"><svg class="ic"><use href="#i-mobile"/></svg> GCash QR code</button>
+        <p class="adm-nav-label">Shop</p>
+        <button type="button" class="adm-link" id="adm-view-site"><svg class="ic"><use href="#i-globe"/></svg> View website</button>
+      </nav>
+      <button class="adm-logout" id="admin-back-customer" type="button"><svg class="ic"><use href="#i-logout"/></svg> Sign out</button>
+    </aside>
+    <div class="adm-scrim" id="adm-scrim"></div>
+
+    <div class="adm-main">
+      <header class="adm-top">
+        <button class="adm-menu-btn" id="adm-menu-btn" type="button" aria-label="Open menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+        <div class="adm-top-title">
+          <span class="adm-eyebrow">Shop operations</span>
+          <h2>Admin <span class="red">Dashboard</span></h2>
+        </div>
+        <div class="adm-top-actions">
+          <span class="adm-date" id="adm-date"></span>
+          <button class="btn-outline-dark btn-sm queue-refresh" type="button"><svg class="ic"><use href="#i-refresh"/></svg> Refresh</button>
+        </div>
+      </header>
+
+      <div class="adm-content" id="adm-content">
+        <section id="adm-overview" class="adm-section">
+          <p class="adm-lead">Shared customer records, queue status, contact details, and payment totals.</p>
+          <div class="admin-stats" id="admin-stats"></div>
+          <div class="adm-grid">
+            <div class="adm-panel" id="admin-next"></div>
+            <div class="adm-panel" id="admin-insights"></div>
+          </div>
+        </section>
+
+        <section id="adm-queue" class="adm-section">
+          <div class="adm-panel">
+            <div class="adm-panel-head">
+              <div><h3>Customer queue</h3><p>Waiting customers in queue order. Call a customer to mark them as served.</p></div>
+            </div>
+            <div id="admin-queue-list"></div>
+          </div>
+        </section>
+
+        <section id="adm-records" class="adm-section">
+          <div class="adm-panel">
+            <div class="adm-panel-head">
+              <div><h3>Customer records</h3><p>All bookings stored on the shop server.</p></div>
+              <div class="record-tools">
+                <button class="btn-outline-dark btn-sm queue-delete-period" data-period="week" type="button">Erase last 7 days</button>
+                <button class="btn-outline-dark btn-sm queue-delete-period" data-period="month" type="button">Erase last 30 days</button>
+              </div>
+            </div>
+            <div class="adm-filters">
+              <label class="adm-search"><svg class="ic"><use href="#i-search"/></svg>
+                <input type="search" id="rec-search" placeholder="Search name, phone, haircut, barber…" aria-label="Search customer records" />
+              </label>
+              <select id="rec-filter" aria-label="Filter by status">
+                <option value="all">All statuses</option>
+                <option value="waiting">Waiting</option>
+                <option value="served">Served</option>
+              </select>
+            </div>
+            <div class="admin-table-wrap" id="queue-container"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <button class="admin-fab hidden" id="admin-fab" type="button"><svg class="ic"><use href="#i-dashboard"/></svg> Dashboard</button>
+
+  <div class="modal-overlay hidden" id="admin-login-modal" aria-labelledby="admin-login-title" aria-modal="true" role="dialog">
+    <form class="modal-box admin-login-box" id="admin-login-form">
+      <button class="modal-x" type="button" id="admin-login-close" aria-label="Close admin login"><svg class="ic"><use href="#i-x"/></svg></button>
+      <img class="login-logo" src="assets/cuts/gupit-express-logo-dark.png" alt="Gupit Xpress" />
+      <div class="section-eyebrow">Staff access</div>
+      <h2 id="admin-login-title">Admin sign in</h2>
+      <p>Enter the shop admin passcode to manage bookings and uploads.</p>
+      <label for="admin-passcode">Passcode</label>
+      <div class="pw-field">
+        <input id="admin-passcode" name="passcode" type="password" autocomplete="current-password" required />
+        <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Show passcode">Show</button>
+      </div>
+      <button class="btn-red full-w" type="submit">Open dashboard</button>
+      <p class="admin-security-note">Customer records and reviews are stored on the shop server.</p>
+    </form>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay hidden" id="lb-overlay">
+    <button class="lb-close" onclick="closeLb()" id="lb-close-btn" aria-label="Close preview"><svg class="ic"><use href="#i-x"/></svg></button>
+    <img src="" alt="Preview" id="lb-img" />
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-container" id="toast-container" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
